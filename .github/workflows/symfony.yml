@@ -41,8 +41,6 @@ jobs:
       run: |
         mkdir -p data
         touch data/database.sqlite
-    - name: Migrate database 
-      run: php bin/console d:m:m --no-interaction --env=test
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DATABASE_URL: "mysql://root:@localhost:3306/symfony?serverVersion=5.7"
